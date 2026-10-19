@@ -1,6 +1,6 @@
 FROM python:3.13-alpine3.24
 
-WORKDIR app/
+WORKDIR /app
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -19,3 +19,5 @@ RUN adduser \
 RUN mkdir -p /vol/web/media
 RUN chown -R django-user:django-user /vol/
 RUN chmod -R 755 /vol/web/
+
+USER django-user
